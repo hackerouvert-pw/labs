@@ -1,0 +1,42 @@
+---
+version: "3"
+services:
+  alice:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - "USER=alice"
+        - "USER_PASSWORD=changeme"
+    ports:
+      - "9001:22"
+
+  bob:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - "USER=bob"
+        - "USER_PASSWORD=changeme"
+    ports:
+      - "9002:22"
+
+  chris:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - "USER=carol"
+        - "USER_PASSWORD=changeme"
+    ports:
+      - "9003:22"
+
+  delta:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - "USER=david"
+        - "USER_PASSWORD=changeme"
+    ports:
+      - "9004:22"
